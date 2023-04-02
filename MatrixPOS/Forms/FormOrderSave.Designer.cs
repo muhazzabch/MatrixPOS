@@ -59,19 +59,19 @@
             // 
             // textBoxCustomerName
             // 
-            this.textBoxCustomerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxCustomerName.Font = new System.Drawing.Font("Jameel Noori Nastaleeq", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxCustomerName.Location = new System.Drawing.Point(96, 52);
             this.textBoxCustomerName.Name = "textBoxCustomerName";
-            this.textBoxCustomerName.Size = new System.Drawing.Size(298, 41);
+            this.textBoxCustomerName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.textBoxCustomerName.Size = new System.Drawing.Size(298, 47);
             this.textBoxCustomerName.TabIndex = 1;
             // 
             // textBoxCustomerPhone
             // 
-            this.textBoxCustomerPhone.Font = new System.Drawing.Font("Jameel Noori Nastaleeq", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxCustomerPhone.Location = new System.Drawing.Point(96, 123);
+            this.textBoxCustomerPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxCustomerPhone.Location = new System.Drawing.Point(96, 122);
             this.textBoxCustomerPhone.Name = "textBoxCustomerPhone";
-            this.textBoxCustomerPhone.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.textBoxCustomerPhone.Size = new System.Drawing.Size(298, 41);
+            this.textBoxCustomerPhone.Size = new System.Drawing.Size(298, 38);
             this.textBoxCustomerPhone.TabIndex = 2;
             // 
             // label3

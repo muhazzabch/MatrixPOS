@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.DeleteRowBtn = new System.Windows.Forms.Button();
             this.dataGridViewMain = new System.Windows.Forms.DataGridView();
             this.BtnNewBill = new System.Windows.Forms.Button();
@@ -67,7 +67,7 @@
             this.DeleteRowBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.DeleteRowBtn.Font = new System.Drawing.Font("Jameel Noori Nastaleeq", 12F, System.Drawing.FontStyle.Bold);
             this.DeleteRowBtn.ForeColor = System.Drawing.Color.Black;
-            this.DeleteRowBtn.Location = new System.Drawing.Point(1157, 562);
+            this.DeleteRowBtn.Location = new System.Drawing.Point(1157, 560);
             this.DeleteRowBtn.Margin = new System.Windows.Forms.Padding(4);
             this.DeleteRowBtn.Name = "DeleteRowBtn";
             this.DeleteRowBtn.Size = new System.Drawing.Size(35, 32);
@@ -81,14 +81,14 @@
             this.dataGridViewMain.AllowUserToDeleteRows = false;
             this.dataGridViewMain.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dataGridViewMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Jameel Noori Nastaleeq", 12F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewMain.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Jameel Noori Nastaleeq", 12F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewMain.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridViewMain.Location = new System.Drawing.Point(13, 190);
             this.dataGridViewMain.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridViewMain.Name = "dataGridViewMain";
@@ -96,7 +96,7 @@
             this.dataGridViewMain.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dataGridViewMain.RowHeadersWidth = 51;
             this.dataGridViewMain.RowTemplate.Height = 25;
-            this.dataGridViewMain.Size = new System.Drawing.Size(1179, 348);
+            this.dataGridViewMain.Size = new System.Drawing.Size(1179, 345);
             this.dataGridViewMain.TabIndex = 10;
             // 
             // BtnNewBill
@@ -187,7 +187,6 @@
             this.TotalTxt.Location = new System.Drawing.Point(213, 127);
             this.TotalTxt.Margin = new System.Windows.Forms.Padding(4);
             this.TotalTxt.Name = "TotalTxt";
-            this.TotalTxt.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.TotalTxt.Size = new System.Drawing.Size(144, 46);
             this.TotalTxt.TabIndex = 27;
             // 
@@ -203,7 +202,6 @@
             0,
             0});
             this.DiscTxt.Name = "DiscTxt";
-            this.DiscTxt.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.DiscTxt.Size = new System.Drawing.Size(79, 46);
             this.DiscTxt.TabIndex = 6;
             this.DiscTxt.ValueChanged += new System.EventHandler(this.DiscTxt_ValueChanged);
@@ -240,7 +238,6 @@
             this.SizeX.Location = new System.Drawing.Point(674, 127);
             this.SizeX.Margin = new System.Windows.Forms.Padding(4);
             this.SizeX.Name = "SizeX";
-            this.SizeX.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.SizeX.Size = new System.Drawing.Size(64, 46);
             this.SizeX.TabIndex = 26;
             // 
@@ -256,7 +253,6 @@
             0,
             0});
             this.RateTxt.Name = "RateTxt";
-            this.RateTxt.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RateTxt.Size = new System.Drawing.Size(108, 46);
             this.RateTxt.TabIndex = 5;
             this.RateTxt.ValueChanged += new System.EventHandler(this.RateTxt_ValueChanged);
@@ -265,8 +261,9 @@
             // 
             this.UnitTxt.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.UnitTxt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.UnitTxt.Font = new System.Drawing.Font("Jameel Noori Nastaleeq", 14.25F);
+            this.UnitTxt.Font = new System.Drawing.Font("Jameel Noori Nastaleeq", 14F, System.Drawing.FontStyle.Bold);
             this.UnitTxt.FormattingEnabled = true;
+            this.UnitTxt.ItemHeight = 39;
             this.UnitTxt.Items.AddRange(new object[] {
             "میٹر",
             "گز"});
@@ -274,8 +271,8 @@
             this.UnitTxt.Margin = new System.Windows.Forms.Padding(4);
             this.UnitTxt.Name = "UnitTxt";
             this.UnitTxt.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.UnitTxt.Size = new System.Drawing.Size(79, 49);
-            this.UnitTxt.TabIndex = 1;
+            this.UnitTxt.Size = new System.Drawing.Size(79, 47);
+            this.UnitTxt.TabIndex = 2;
             this.UnitTxt.SelectedIndexChanged += new System.EventHandler(this.UnitTxt_SelectedIndexChanged);
             this.UnitTxt.VisibleChanged += new System.EventHandler(this.SizeY_ValueChanged);
             // 
@@ -285,9 +282,10 @@
             this.DescriptionTxtOpt.Font = new System.Drawing.Font("Jameel Noori Nastaleeq", 14.25F);
             this.DescriptionTxtOpt.Location = new System.Drawing.Point(849, 127);
             this.DescriptionTxtOpt.Margin = new System.Windows.Forms.Padding(4);
+            this.DescriptionTxtOpt.Multiline = true;
             this.DescriptionTxtOpt.Name = "DescriptionTxtOpt";
             this.DescriptionTxtOpt.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.DescriptionTxtOpt.Size = new System.Drawing.Size(167, 48);
+            this.DescriptionTxtOpt.Size = new System.Drawing.Size(167, 46);
             this.DescriptionTxtOpt.TabIndex = 3;
             // 
             // QtyNum
@@ -302,9 +300,8 @@
             0,
             0});
             this.QtyNum.Name = "QtyNum";
-            this.QtyNum.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.QtyNum.Size = new System.Drawing.Size(79, 46);
-            this.QtyNum.TabIndex = 2;
+            this.QtyNum.TabIndex = 1;
             this.QtyNum.ValueChanged += new System.EventHandler(this.QtyNum_ValueChanged);
             // 
             // label1
@@ -379,7 +376,6 @@
             0,
             0});
             this.SizeY.Name = "SizeY";
-            this.SizeY.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.SizeY.Size = new System.Drawing.Size(79, 46);
             this.SizeY.TabIndex = 4;
             this.SizeY.ValueChanged += new System.EventHandler(this.SizeY_ValueChanged);
@@ -390,7 +386,7 @@
             this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(190)))), ((int)(((byte)(156)))));
             this.btnSave.Font = new System.Drawing.Font("Jameel Noori Nastaleeq", 15.75F);
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(13, 543);
+            this.btnSave.Location = new System.Drawing.Point(13, 539);
             this.btnSave.Margin = new System.Windows.Forms.Padding(4);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(192, 63);

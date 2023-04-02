@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -23,13 +24,17 @@ namespace MatrixPOS.Forms
         {
             if (string.IsNullOrWhiteSpace(textBoxCustomerName.Text))
             {
-                MessageBox.Show("Please enter a valid customer name.");
+                MessageBox.Show("برائے مہربانی درست نام کا اندراج کریں");
                 return;
             }
 
-            if (string.IsNullOrWhiteSpace(textBoxCustomerPhone.Text))
+            // Define the regular expression pattern for a 10-digit phone number
+            string phonePattern = @"^\d{11}$";
+
+            // Check if the phone number matches the pattern
+            if (!Regex.IsMatch(textBoxCustomerPhone.Text, phonePattern))
             {
-                MessageBox.Show("Please enter a valid customer phone number.");
+                MessageBox.Show("براہ کرم ایک درست 11 ہندسوں والا فون نمبر درج کریں");
                 return;
             }
 

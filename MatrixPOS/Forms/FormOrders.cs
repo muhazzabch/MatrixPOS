@@ -28,7 +28,7 @@ namespace MatrixPOS.Forms
         private void FormOrders_Load(object sender, EventArgs e)
         {
             UnitTxt.SelectedIndex = 0;
-            UnitTxt.Focus();
+            QtyNum.Focus();
             _currentBillTable.Columns.Clear();
             _currentBillTable.Rows.Clear();
             //** adding Columns
@@ -100,7 +100,22 @@ namespace MatrixPOS.Forms
             _item[4] = RateTxt.Value;
             _item[5] = DiscTxt.Value;
             _item[6] = total;
-            if (total != 0)
+
+
+
+            if (!int.TryParse(DiscTxt.Text, out int disc))
+            {
+                MessageBox.Show("براہ کرم درست ڈسکاونٹ رقم درج کریں", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                DiscTxt.Focus();
+                return;
+            }
+            if (disc >= int.Parse(RateTxt.Text))
+            {
+                MessageBox.Show("ڈسکاؤنٹ، ریٹ سے کم ہونا چاہیے", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                DiscTxt.Focus();
+                return;
+            }
+            if (total != 0 )
             {
                 _currentBillTable.Rows.Add(_item);
                 dataGridViewMain.DataSource = _currentBillTable;
@@ -109,8 +124,9 @@ namespace MatrixPOS.Forms
             }
             else
             {
-                MessageBox.Show("values can't be zero!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("ٹوٹل رقم صفر نہیں ہو سکتی", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            QtyNum.Focus();
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
@@ -123,7 +139,7 @@ namespace MatrixPOS.Forms
             {
                 string customerName = formOrderSave.CustomerName;
                 string customerPhone = formOrderSave.CustomerPhone;
- 
+
                 // Establish a connection to the database
                 string connectionString = ConfigurationManager.ConnectionStrings["MatrixPOSConnection"].ConnectionString;
                 using (SqlConnection connection = new SqlConnection(connectionString))
@@ -179,17 +195,17 @@ namespace MatrixPOS.Forms
                         command.Parameters.AddWithValue("@Bill", grandTotal);
                         command.ExecuteNonQuery();
 
-                        }
                     }
                 }
-
-            DialogResult printable = MessageBox.Show("کیا آپ آرڈر پرنٹ کرنا چاہتے ہیں؟", "پرنٹ آرڈر", MessageBoxButtons.YesNo);
-            if (printable == DialogResult.Yes)
-            {
-                PrintOrder obj = new PrintOrder(_OrdeId);
-                obj.Print();
+                DialogResult printable = MessageBox.Show("کیا آپ آرڈر پرنٹ کرنا چاہتے ہیں؟", "پرنٹ آرڈر", MessageBoxButtons.YesNo);
+                if (printable == DialogResult.Yes)
+                {
+                    PrintOrder obj = new PrintOrder(_OrdeId);
+                    obj.Print();
+                }
             }
         }
+   
 
         private void DeleteRowBtn_Click(object sender, EventArgs e)
         {
