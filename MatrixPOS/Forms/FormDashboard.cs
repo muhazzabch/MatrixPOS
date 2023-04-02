@@ -79,9 +79,9 @@ namespace MatrixPOS.Forms
                     {
                         lbl7DaysSale.Text = "0.00";
                     }
-                    
+
                     // Get the last 7 days of sales data
-                    command.CommandText = "SELECT order_date, SUM(Bill) FROM tblOrders WHERE order_date >= DATEADD(day, -7, GETDATE()) GROUP BY order_date";
+                    command.CommandText = "SELECT CAST(order_date AS DATE) AS OrderDate, SUM(Bill) AS TotalBill FROM tblOrders WHERE order_date >= DATEADD(day, -6, CAST(GETDATE() AS DATE)) GROUP BY CAST(order_date AS DATE) ORDER BY CAST(order_date AS DATE) ASC;";
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
                         while (reader.Read())
