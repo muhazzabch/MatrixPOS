@@ -66,7 +66,7 @@ namespace MatrixPOS.Forms
 
         private void BtnPrint_Click(object sender, EventArgs e)
         {
-            PrintOrder obj = new PrintOrder(_orderId);
+            OrderPrinter obj = new OrderPrinter(_orderId);
             obj.Print();
             this.DialogResult = DialogResult.OK;
             this.Close();
@@ -105,6 +105,9 @@ namespace MatrixPOS.Forms
                 this.Close();
             }
         }
+        private void BtnUpdate_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }

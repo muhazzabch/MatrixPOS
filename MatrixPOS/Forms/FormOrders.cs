@@ -9,7 +9,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Microsoft.VisualBasic;
 using MatrixPOS;
 
 
@@ -214,7 +213,7 @@ namespace MatrixPOS.Forms
                 DialogResult printable = MessageBox.Show("کیا آپ آرڈر پرنٹ کرنا چاہتے ہیں؟", "پرنٹ آرڈر", MessageBoxButtons.YesNo);
                 if (printable == DialogResult.Yes)
                 {
-                    PrintOrder obj = new PrintOrder(_OrdeId);
+                    OrderPrinter obj = new OrderPrinter(_OrdeId);
                     obj.Print();
                 }
                 sequence = 0;

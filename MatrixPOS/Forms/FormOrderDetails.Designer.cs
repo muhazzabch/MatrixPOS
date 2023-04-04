@@ -118,6 +118,7 @@
             this.BtnUpdate.TabIndex = 33;
             this.BtnUpdate.Text = "اپ ڈیٹ";
             this.BtnUpdate.UseVisualStyleBackColor = false;
+            this.BtnUpdate.Click += new System.EventHandler(this.BtnUpdate_Click);
             // 
             // FormOrderDetails
             // 
