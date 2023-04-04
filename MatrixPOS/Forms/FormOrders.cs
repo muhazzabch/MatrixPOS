@@ -103,16 +103,25 @@ namespace MatrixPOS.Forms
 
 
 
-            if (!int.TryParse(DiscTxt.Text, out int disc))
+            if (!decimal.TryParse(DiscTxt.Text, out decimal disc))
             {
                 MessageBox.Show("براہ کرم درست ڈسکاونٹ رقم درج کریں", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 DiscTxt.Focus();
+                DiscTxt.BackColor = Color.Red;
                 return;
             }
-            if (disc >= int.Parse(RateTxt.Text))
+            if (decimal.Parse(RateTxt.Text) <= 0)
+            {
+                MessageBox.Show("براہ کرم درست ریٹ درج کریں", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                RateTxt.Focus();
+                RateTxt.BackColor = Color.Red;
+                return;
+            }
+            if (disc >= decimal.Parse(RateTxt.Text))
             {
                 MessageBox.Show("ڈسکاؤنٹ، ریٹ سے کم ہونا چاہیے", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 DiscTxt.Focus();
+                DiscTxt.BackColor = Color.Red;
                 return;
             }
             if (total != 0 )
@@ -126,14 +135,19 @@ namespace MatrixPOS.Forms
             {
                 MessageBox.Show("ٹوٹل رقم صفر نہیں ہو سکتی", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            QtyNum.Focus();
         }
+
+        private void ClearBtn_Click(object sender, EventArgs e)
+        {
+            Clear();
+        }
+
         private void btnSave_Click(object sender, EventArgs e)
         {
             var formOrderSave = new FormOrderSave();
             var result = formOrderSave.ShowDialog();
 
-            int _OrdeId = 0; //Declare variable to save ID for Print function
+            int _OrdeId = 0; //Declare variable to save ID for printing order
 
             if (result == DialogResult.OK)
             {
@@ -203,6 +217,9 @@ namespace MatrixPOS.Forms
                     PrintOrder obj = new PrintOrder(_OrdeId);
                     obj.Print();
                 }
+                sequence = 0;
+                _currentBillTable.Rows.Clear();
+                Clear();
             }
         }
    
@@ -226,6 +243,7 @@ namespace MatrixPOS.Forms
         {
             sequence = 0;
             _currentBillTable.Rows.Clear();
+            Clear();
 
         }
 
