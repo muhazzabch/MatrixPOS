@@ -71,5 +71,40 @@ namespace MatrixPOS.Forms
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
+
+        private void BtnDelete_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("کیا آپ واقعی اس آرڈر کو ڈیلیٹ کرنا چاہتے ہیں؟", "ڈیلیٹ آرڈر", MessageBoxButtons.YesNo);
+
+            if (dialogResult == DialogResult.Yes)
+            {
+                string connectionString = ConfigurationManager.ConnectionStrings["MatrixPOSConnection"].ConnectionString;
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    // Delete the order from tblOrderDetails
+                    string deleteOrderDetailsQuery = "DELETE FROM tblOrderDetails WHERE Order_ID = @OrderID";
+                    using (SqlCommand command = new SqlCommand(deleteOrderDetailsQuery, connection))
+                    {
+                        command.Parameters.AddWithValue("@OrderID", _orderId);
+                        command.ExecuteNonQuery();
+                    }
+
+                    // Delete the order from tblOrders
+                    string deleteOrderQuery = "DELETE FROM tblOrders WHERE Order_ID = @OrderID";
+                    using (SqlCommand command = new SqlCommand(deleteOrderQuery, connection))
+                    {
+                        command.Parameters.AddWithValue("@OrderID", _orderId);
+                        command.ExecuteNonQuery();
+                    }
+                }
+
+                MessageBox.Show("آرڈر کامیابی کے ساتھ ڈیلیٹ ہو گیا۔");
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+        }
+
     }
 }

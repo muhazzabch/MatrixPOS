@@ -88,6 +88,7 @@
             this.BtnDelete.TabIndex = 12;
             this.BtnDelete.Text = "آرڈر ڈیلیٹ کریں";
             this.BtnDelete.UseVisualStyleBackColor = false;
+            this.BtnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
             // 
             // BtnPrint
             // 
